@@ -1,0 +1,6 @@
+#controllers_sensor:
+#  resource: ../../src/Infrastructure/API/V1/Aggregate/Sensor/Controller
+#  type: annotation
+controllers_sensor:
+  resource: "../../src/Infrastructure/API/V1/Aggregate/Sensor/Controller"
+  type:     annotation
