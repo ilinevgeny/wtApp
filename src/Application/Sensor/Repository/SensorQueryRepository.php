@@ -6,5 +6,4 @@ namespace Application\Sensor\Repository;
 
 class SensorQueryRepository
 {
-
 }

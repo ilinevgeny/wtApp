@@ -6,7 +6,7 @@ namespace Infrastructure\Sensor\Repository;
 
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
-use Domain\Sensor\Repository\SensorRepository;
+use Domain\Sensor\SensorRepository;
 use Domain\Sensor\Sensor;
 
 class OrmSensorRepository extends ServiceEntityRepository implements SensorRepository

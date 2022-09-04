@@ -1,17 +1,27 @@
 framework:
     messenger:
         # reset services after consuming messages
-        reset_on_message: true
+        #reset_on_message: true
 
         # Uncomment this (and the failed transport below) to send failed messages to this transport for later handling.
         # failure_transport: failed
 
         transports:
+            sensor_data:
+                dsn: '%env(MESSENGER_TRANSPORT_DSN)%'
+                retry_strategy:
+                    delay: 500
+                options:
+                    exchange:
+                        name: 'sensor_data'
+                    queues:
+                        sensor_data: ~
             # https://symfony.com/doc/current/messenger.html#transport-configuration
-            # async: '%env(MESSENGER_TRANSPORT_DSN)%'
+            #async: '%env(MESSENGER_TRANSPORT_DSN)%'
             # failed: 'doctrine://default?queue_name=failed'
             # sync: 'sync://'
 
         routing:
             # Route your messages to the transports
             # 'App\Message\YourMessage': async
+            'Infrastructure\Sensor\UseCase\Messenger\Message\Event\SensorDataReceived': sensor_data
