@@ -2,9 +2,11 @@
 
 declare(strict_types=1);
 
-use Redis;
+namespace Infrastructure\Sensor\Repository;
 
-class RedisSensorRepository implements \Domain\Sensor\Repository\SensorRepository
+use Domain\Sensor\SensorRepository;
+
+class RedisSensorRepository implements SensorRepository
 {
     private const SENSOR_KEY = 'sensor_id%';
 
