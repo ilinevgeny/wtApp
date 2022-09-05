@@ -23,10 +23,9 @@ class ReceiveAction
     */
     public function receive(): JsonResponse
     {
-        //dd($this->bus);
-        $uuid = 'f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8';
-        $temperature = 20.0;
-        $timestamp = 1234567890;
+        $uuid = '123e4567-e89b-12d3-a456-426614174000';
+        $temperature = rand(1, 200) + rand(0, 10) / 10;
+        $timestamp = time();
         $message = new SensorDataReceived($uuid, $temperature, $timestamp);
         $this->bus->dispatch($message);
 

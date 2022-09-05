@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+
+    <entity name="Domain\Temperature\Temperature" table="temperature_metrics"
+            repository-class="Infrastructure\Metrics\Repository\OrmTemperatureRepository">
+        <id name="id" type="integer" column="id">
+            <generator strategy="AUTO"/>
+        </id>
+        <field name="sensorId" column="sensor_id" type="integer" />
+        <field name="temperatureCelsius" type="float" column="temperature_c" />
+        <field name="temperatureFahrenheit" type="float" column="temperature_f" />
+        <field name="createdAt" type="datetime" column="created_at" />
+    </entity>
+</doctrine-mapping>
