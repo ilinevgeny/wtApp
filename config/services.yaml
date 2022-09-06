@@ -28,5 +28,10 @@ services:
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
     Infrastructure\API\V1\Aggregate\Sensor\Controller\:
-        resource: '../src/Infrastructure/API/V1/Aggregate/Sensor/Controller'
+        resource: '../src/Infrastructure/API/V1/Aggregate/Sensor/Controller/'
         tags: [ 'controller.service_arguments' ]
+
+    Infrastructure\API\V1\Aggregate\Sensor\Controller\ReceivedAction\ReceivedRequest:
+        autowire: true
+        arguments:
+            - : '@Symfony\Component\HttpFoundation\Request'
