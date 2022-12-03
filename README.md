@@ -13,18 +13,17 @@ Application to read and manage data from temperature sensors. Application is pur
 #### Sensors specifications
 ##### Type 1: 
 Can report to API, reports with POST method, json with following structure:
-```json {
-"reading": {
-    "sensor_uuid": "unique uuid of sensor",
-    "temperature": "decimal format, xxx.xxx, in fahrenheit"
+``` 
+{
+    "reading": {
+        "sensor_uuid": "unique uuid of sensor",
+        "temperature": "decimal format, xxx.xxx, in fahrenheit"
     }
 }
 ```
 ##### Type 2: 
 Expects data to be read from it’s API, new sensors will be added manually via some basic form
-Sensor expects request
-
-GET %sensor_ip%/data
+Sensor expects request `GET %sensor_ip%/data`
 Return is a csv - string:
 `reading_id`, `temperature` in celsius in format xxx.x decimal
 

@@ -1,6 +1,6 @@
 {
     "type": "project",
-    "description": "Test application for Dynotech company",
+    "description": "Test application for Dynatech company",
     "license": "proprietary",
     "minimum-stability": "stable",
     "prefer-stable": true,
@@ -26,6 +26,7 @@
         "symfony/proxy-manager-bridge": "5.4.*",
         "symfony/runtime": "5.4.*",
         "symfony/serializer": "5.4.*",
+        "symfony/validator": "5.4.*",
         "symfony/yaml": "5.4.*"
     },
     "config": {

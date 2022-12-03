@@ -23,17 +23,17 @@ final class Version20220830092731 extends AbstractMigration
             CREATE TABLE temperature_metrics (
                 id SERIAL PRIMARY KEY NOT NULL,
                 sensor_id INT NOT NULL,
-                temperature FLOAT NOT NULL,
+                temperature_c FLOAT NOT NULL,
+                temperature_f FLOAT NOT NULL,
                 created_at TIMESTAMP NOT NULL,
                 FOREIGN KEY (sensor_id) REFERENCES sensor (id)
             )
             SQL
         );
-
     }
 
     public function down(Schema $schema): void
     {
-       $this->addSql('DROP TABLE temperature_metrics');
+        $this->addSql('DROP TABLE temperature_metrics');
     }
 }
